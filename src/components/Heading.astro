@@ -1,0 +1,39 @@
+---
+interface Props {
+  HeadingTag: any;
+  text?: string;
+}
+
+const { HeadingTag, text = 'Sample Text' } = Astro.props;
+const style = setStyle(HeadingTag);
+
+function setStyle(tag: string) {
+  switch (tag) {
+    case 'h1':
+      return 'mb-8 text-3xl md:text-5xl font-bold';
+      break;
+    case 'h2':
+      return 'mb-6 text-2xl md:text-4xl font-bold';
+      break;
+    case 'h3':
+      return 'mb-4 text-xl md:text-3xl font-bold';
+      break;
+    case 'h4':
+      return 'text-lg md:text-xl font-medium';
+      break;
+  }
+}
+---
+
+<HeadingTag class={style}>{text}</HeadingTag>
+
+<style>
+  h1,
+  h2,
+  h3,
+  h4,
+  h4,
+  h6 {
+    font-family: 'Open Sans Variable', sans-serif;
+  }
+</style>

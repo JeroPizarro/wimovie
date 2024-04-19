@@ -1,7 +1,20 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageContent from '../components/PageContent.astro';
+import Heading from '../components/Heading.astro';
+import Section from '../components/Section.astro';
+
+const sectionOneStyle =
+  'col-start-1 md:col-start-2 col-end-7 md:col-end-12 mt-12';
 ---
 
 <Layout title="Welcome to Astro.">
-  <h1>Hello World</h1>
+  <PageContent>
+    <Section name="section-one" style={sectionOneStyle}>
+      <Heading HeadingTag="h1" text="Lastest Movie Premiers" />
+      <Heading HeadingTag="h2" text="Lastest Movie Premiers" />
+      <Heading HeadingTag="h3" text="Lastest Movie Premiers" />
+      <Heading HeadingTag="h4" text="Lastest Movie Premiers" />
+    </Section>
+  </PageContent>
 </Layout>
